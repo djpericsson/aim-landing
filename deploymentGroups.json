@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Standard Customers - West Europe",
+        "location": "West Europe",
+        "storage": {
+            "globalConfiguration": "True"
+        },
+        "corsRules": {
+            "globalConfiguration": "True"
+        },
+        "dnsRecordSet": {
+            "globalConfiguration": "True"
+        },
+        "webApps": [
+            {
+                "globalConfiguration": "True"
+            }
+        ],
+        "keyVault": {
+            "globalConfiguration": "True"
+        },
+        "tags": {
+            "globalConfiguration": "True"
+        }
+    }
+]

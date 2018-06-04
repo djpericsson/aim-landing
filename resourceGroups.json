@@ -1,0 +1,35 @@
+[{
+    "name": "DEV-xfw-prod-rg",
+    "location": "West Europe",
+    "appServicePlans": [{
+            "name": "[ResourceGroup]",
+            "tier": "Basic"
+        }
+    ],
+    "keyVault": {
+        "globalConfiguration": "True"
+    },
+    "azureRmAutomationAccount": {
+        "name": "[ResourceGroup]",
+        "azureRmAutomationCredentials": [{
+                "name": "[ResourceGroup]",
+                "description": "Used for ExflowDEV SaaS Azure Automation"
+            }
+        ],
+        "azureRmAutomationVariable": [{
+                "name": "RedistPath",
+                "value": "https://github.com/djpericsson/AzureWebAppDeploy/raw/master",
+                "encrypted": false
+            }
+        ]
+    },
+    "hybridConnection": {
+        "name": "navlabexflowdevcloud",
+        "nameSpace": "navlabexflowdevcloudbus",
+        "enabled": false
+    },
+    "tags": {
+        "globalConfiguration": "True"
+    }
+}
+]
