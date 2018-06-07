@@ -1,69 +1,109 @@
 {
-	"subscriptionId": "37c95fbb-6ced-4692-b3f4-474b16b766ad",
-	"tenantDomain": "exflowdev.cloud",
-	"resourceCharacterLimit": 19,
-	"storage": {
-		"type": "Standard_LRS",
-		"containers": ["attachments", "documents", "exflowdiagnostics"]
-	},
-	"corsRules": {
-		"allowedHeaders": ["x-ms-meta-abc", "Content-Encoding", "Content-Range", "Accept-Ranges", "x-ms-meta-data*", "x-ms-meta-target*"],
-		"allowedOrigins": ["http://[CustomerShortname].exflow.debug", "https://[CustomerShortname].exflow.cloud"],
-		"maxAgeInSeconds": 0,
-		"exposedHeaders": ["Accept-Ranges", "Content-Range", "Content-Encoding", "Content-Length", "Content-Type"],
-		"allowedMethods": ["Get"]
-	},
-	"dnsRecordSet": {
-		"name": "[CustomerShortname]",
-		"recordType": "CNAME",
-		"ttl": 3600,
-		"dnsRecords": "[DeploymentName].azurewebsites.net",
-		"resourceGroupName": "[SAASServices]"
-	},
-	"webApp": {
-		"name": "[DeploymentName]",
-		"sourceRepoURI": "https://github.com/djpericsson/aim-landing.git",
-		"appServicePlan": "[ResourceGroup]",
-		"appSettings": {
-			"applicationInsightsInstrumentationKey": "72d119d9-a1cc-4eb1-b669-7af55d540c0d",
-			"startup.DeploymentName": "[DeploymentName]",
-			"startup.KeyVaultCredentialConnectionString": "RunAs=App; TenantId=dedd0f01-f944-4b39-a6a8-3a46f9ed225a; AppId=f3a53516-b366-401f-a211-b987b645e3eb; AppKey=[StorageKey]",
-			"offline_": "85.24.197.82"
-		}
-	},
-	"keyVault": {
-		"name": "[CustomerShortname]",
-		"contentType": "CustomerDeployment",
-		"vaultName": "[ResourceGroup]",
-		"sku": "Standard",
-		"applicationSettings": {
-			"FormsTestSitePassword": "2",
-			"security_Admins": "BB,CC",
-			"clientTypeName": "ExFlow.Logic.NAVServiceReference20170921.EXFWEB_PortClient,ExFlow.Logic",
-			"aad_TenantId": "",
-			"StorageConnection": "DefaultEndpointsProtocol=https;AccountName=[ResourceGroup];AccountKey=[StorageKey];EndpointSuffix=core.windows.net",
-			"dynamicsChannel": "",
-			"KeyValueStorageConnection": "DefaultEndpointsProtocol=https;AccountName=[ResourceGroup];AccountKey=[StorageKey];EndpointSuffix=core.windows.net",
-			"security_TicketFormsTestSiteUsers": "none@nowhere.no",
-			"company": "[CustomerName]",
-			"userName": "ADMUSR",
-			"address": "https://sd0-nav06:7347/CH_NAVUSERPASS/WS/ReplaceWithAPercentEncodedCompanyName/Codeunit/EXFWEB",
-			"aad_ClientSecret": "",
-			"AppControlMergeFile": "App.NAV.WS.xml?{DebugLog}=false;{FormsTestSite}=true;{PurchaseDisabled}=true;{UseNAVSSOEmailing}=false",
-			"password": "******",
-			"aad_PostLogoutRedirectUri": "https://[CustomerShortname].exflowdev.cloud/ExFlowDynamics/close.aspx?signedout=yes",
-			"aad_ClientId": "",
-			"aad_AADInstance": "",
-			"endpointName": "ExFlowSSL20170921_Port"
-		}
-	},
-	"kuduApi": {
-		"uri": "scm.azurewebsites.net",
-		"command": "/api/command",
-		"zip": "/api/zip/site/wwwroot"
-	},
-	"tags": {
-		"customer": "[CustomerName]",
-		"solution": "Exflow"
-	}
+    "subscriptionId": "37c95fbb-6ced-4692-b3f4-474b16b766ad",
+    "tenantDomain": "exflowdev.cloud",
+    "resourceCharacterLimit": 19,
+    "storage": {
+        "type": "Standard_LRS",
+        "containers": ["attachments", "documents", "exflowdiagnostics"]
+    },
+    "corsRules": {
+        "allowedHeaders": [
+            "x-ms-meta-abc",
+            "Content-Encoding",
+            "Content-Range",
+            "Accept-Ranges",
+            "x-ms-meta-data*",
+            "x-ms-meta-target*"
+        ],
+        "allowedOrigins": ["http://[CustomerShortname].exflow.debug", "https://[CustomerShortname].exflow.cloud"],
+        "maxAgeInSeconds": 0,
+        "exposedHeaders": ["Accept-Ranges", "Content-Range", "Content-Encoding", "Content-Length", "Content-Type"],
+        "allowedMethods": ["Get"]
+    },
+    "dnsRecordSet": {
+        "name": "[CustomerShortname]",
+        "recordType": "CNAME",
+        "ttl": 3600,
+        "dnsRecords": "[DeploymentName].azurewebsites.net",
+        "resourceGroupName": "[SAASServices]"
+    },
+    "webApp": {
+        "name": "[DeploymentName]",
+        "sourceRepoURI": "https://github.com/djpericsson/aim-landing.git",
+        "appServicePlan": "[ResourceGroup]",
+        "appSettings": {
+            "applicationInsightsInstrumentationKey": "72d119d9-a1cc-4eb1-b669-7af55d540c0d",
+            "startup.DeploymentName": "[DeploymentName]",
+            "startup.KeyVaultCredentialConnectionString":
+                "RunAs=App; TenantId=dedd0f01-f944-4b39-a6a8-3a46f9ed225a; AppId=f3a53516-b366-401f-a211-b987b645e3eb; AppKey=[StorageKey]",
+            "offline_": "85.24.197.82"
+        }
+    },
+    "keyVault": {
+        "name": "[CustomerShortname]",
+        "contentType": "CustomerDeployment",
+        "vaultName": "[ResourceGroup]",
+        "sku": "Standard",
+        "applicationSettings": {
+            "FormsTestSitePassword": "2",
+            "security_Admins": "BB,CC",
+            "clientTypeName": "ExFlow.Logic.NAVServiceReference20170921.EXFWEB_PortClient,ExFlow.Logic",
+            "aad_TenantId": "",
+            "StorageConnection":
+                "DefaultEndpointsProtocol=https;AccountName=[ResourceGroup];AccountKey=[StorageKey];EndpointSuffix=core.windows.net",
+            "dynamicsChannel": "",
+            "KeyValueStorageConnection":
+                "DefaultEndpointsProtocol=https;AccountName=[ResourceGroup];AccountKey=[StorageKey];EndpointSuffix=core.windows.net",
+            "security_TicketFormsTestSiteUsers": "none@nowhere.no",
+            "company": "[CustomerName]",
+            "userName": "ADMUSR",
+            "address": "https://sd0-nav06:7347/CH_NAVUSERPASS/WS/ReplaceWithAPercentEncodedCompanyName/Codeunit/EXFWEB",
+            "aad_ClientSecret": "",
+            "AppControlMergeFile":
+                "App.NAV.WS.xml?{DebugLog}=false;{FormsTestSite}=true;{PurchaseDisabled}=true;{UseNAVSSOEmailing}=false",
+            "password": "******",
+            "aad_PostLogoutRedirectUri":
+                "https://[CustomerShortname].exflowdev.cloud/ExFlowDynamics/close.aspx?signedout=yes",
+            "aad_ClientId": "",
+            "aad_AADInstance": "",
+            "endpointName": "ExFlowSSL20170921_Port"
+        }
+    },
+    "kuduApi": {
+        "uri": "scm.azurewebsites.net",
+        "command": "/api/command",
+        "zip": "/api/zip/site/wwwroot"
+    },
+    "modules": [
+        {
+            "name": "AzureRM.KeyVault",
+            "version": "4.3.0"
+        },
+        {
+            "name": "AzureRM.Dns",
+            "version": "4.1.2"
+        },
+        {
+            "name": "AzureRM.Websites",
+            "version": "4.2.2"
+        }
+	],
+	"runbooks": [
+        {
+            "name": "Set-SaaSConfiguration",
+            "webhook": false
+        },
+        {
+            "name": "Add-CustomerKeyVault",
+            "webhook": true
+        },
+        {
+            "name": "Add-CustomerResource",
+            "webhook": false
+        }
+    ],
+    "tags": {
+        "customer": "[CustomerName]",
+        "solution": "Exflow Cloud"
+    }
 }
